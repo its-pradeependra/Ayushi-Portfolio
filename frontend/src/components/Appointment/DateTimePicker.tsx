@@ -113,6 +113,9 @@ const DateTimePicker = ({ value, onChange, label }: DateTimePickerProps) => {
           max={formatDate(maxDate)}
           required
           className="w-full px-3 py-2 rounded-lg border-gray-300 focus:border-pink-500 focus:ring-2 focus:ring-pink-200 transition-all duration-200"
+          onClick={(e) => {
+            e.currentTarget.showPicker();
+          }}
         />
       </div>
 
