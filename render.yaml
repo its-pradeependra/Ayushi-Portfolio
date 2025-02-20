@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: dr-ayushi-backend
+    name: dr-ayushi-shakya-backend-server
     env: node
     buildCommand: cd Server && npm install
     startCommand: cd Server && node server.js
@@ -19,9 +19,9 @@ services:
         value: 7000
 
   - type: static
-    name: dr-ayushi-frontend
+    name: dr-ayushi-shakya
     buildCommand: cd frontend && npm install && npm run build
     publishDir: frontend/dist
     envVars:
       - key: VITE_API_URL
-        value: https://dr-ayushi-shakya.onrender.com/api 
+        value: https://dr-ayushi-shakya-backend-server.onrender.com/api 
