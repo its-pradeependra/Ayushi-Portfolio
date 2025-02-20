@@ -53,11 +53,7 @@ const Header = () => {
               <a href="#appointment" className="text-gray-700 hover:text-pink-500" onClick={closeMenu}>Doctor's Schedule</a>
               <a href="#services" className="text-gray-700 hover:text-pink-500" onClick={closeMenu}>Services</a>
               <a href="#about" className="text-gray-700 hover:text-pink-500" onClick={closeMenu}>About Us</a>
-              <a href="#appointment">
-              <button className="bg-pink-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-pink-600 transition-colors" onClick={closeMenu}>
-                Contact Me
-              </button>
-              </a>
+              <a href="#appointment" className="text-gray-700 hover:text-pink-500" onClick={closeMenu}>Contact Me</a>
             </div>
           </nav>
         </div>
