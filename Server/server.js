@@ -24,7 +24,7 @@ app.use(express.json())
 await connectDB()
 
 // API Routes
-app.use('/apii', appointmentRoutes)
+app.use('/api', appointmentRoutes)
 
 // Add compression for better performance
 app.use(compression())
