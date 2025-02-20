@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: dr-ayushi-backend
+    env: node
+    buildCommand: cd Server && npm install
+    startCommand: cd Server && node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: DOCTOR_EMAIL
+        sync: false
+      - key: DOCTOR_PASS
+        sync: false
+      - key: NOTIFICATION_EMAIL
+        sync: false
+      - key: SERVER_PORT
+        value: 7000
+
+  - type: static
+    name: dr-ayushi-frontend
+    buildCommand: cd frontend && npm install && npm run build
+    publishDir: frontend/dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://dr-ayushi-shakya.onrender.com/api 
