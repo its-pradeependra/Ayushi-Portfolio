@@ -20,11 +20,21 @@ app.use(cors({
 }))
 app.use(express.json())
 
+// Health check endpoint
+   app.get('/apii/health', (req, res) => {
+       res.json({ status: 'OK', message: 'API is running' });
+   });
+
+   // Example API route
+   app.get('/apii/example', (req, res) => {
+       res.json({ message: 'This is an example response' });
+   });
+
 // Connect to database
 await connectDB()
 
 // API Routes
-app.use('/api', appointmentRoutes)
+app.use('/apii', appointmentRoutes)
 
 // Add compression for better performance
 app.use(compression())
