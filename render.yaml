@@ -18,11 +18,10 @@ services:
       - key: SERVER_PORT
         value: 7000
 
-  - type: web
+  - type: static
     name: dr-ayushi-frontend
-    env: static
     buildCommand: cd frontend && npm install && npm run build
-    staticPublishPath: ./frontend/dist
+    publishDir: frontend/dist
     envVars:
       - key: VITE_API_URL
         value: https://dr-ayushi-backend.onrender.com/api 

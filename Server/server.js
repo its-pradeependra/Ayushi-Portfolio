@@ -23,9 +23,7 @@ app.use(express.json())
 // Connect to database
 await connectDB()
 
-const __dirname = path.resolve();
-
-// Routes
+// API Routes
 app.use('/api', appointmentRoutes)
 
 // Add compression for better performance
@@ -34,16 +32,11 @@ app.use(compression())
 // Add security headers
 app.use(helmet())
 
-// Optimize static file serving
-app.use(express.static(path.join(__dirname, 'frontend/dist'), {
-    maxAge: '1d',
-    etag: true,
-    lastModified: true
-}))
-
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'frontend', 'dist', 'index.html'))
-})
+// Remove static file serving since frontend and backend are separate services
+// app.use(express.static(path.join(__dirname, 'frontend/dist')))
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname, 'frontend', 'dist', 'index.html'))
+// })
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`)
