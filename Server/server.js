@@ -14,7 +14,7 @@ const PORT = env.SERVER_PORT || 7000
 app.use(cors({
     origin: [
         'http://localhost:5173',  // Frontend dev server
-        'https://dr-ayushi-frontend.onrender.com'  // Add your Render frontend URL
+        'https://dr-ayushi-shakya.onrender.com'  // Add your Render frontend URL
     ],
     credentials: true
 }))
